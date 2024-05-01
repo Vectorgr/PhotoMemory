@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 @EnableAutoConfiguration
 @Entity
@@ -20,17 +21,12 @@ public class MemoryModel {
     private String description;
 
     @Column
-    private byte[] image;
-    @Column
-    private String imagePath;
-
-    @Column
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate date;
 
     @Column
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate createdDate;
+    private LocalDate createdDate = LocalDate.now();
 
     public UUID getId() {
         return id;
@@ -72,13 +68,4 @@ public class MemoryModel {
         this.createdDate = createdDate;
     }
 
-    public void setImage(byte[] image){this.image = image;}
-    public byte[] getImage(){return this.image;}
-
-    public void setImagePath(String imagePath){
-        this.imagePath = imagePath;
-    }
-    public String getImagePath(){
-        return this.imagePath;
-    }
 }

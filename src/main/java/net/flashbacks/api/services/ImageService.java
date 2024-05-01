@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -22,19 +23,26 @@ public class ImageService {
     }
     //Puede devolver MemoryModel o no
     public Optional<ImageModel> getImage(UUID id){return imageRepository.findById(id);}
+    public List<ImageModel> getImagesByMemory(UUID memoryid){
+        return  imageRepository.findByParentMemory(memoryid);
+    }
 
     @Transactional
     public ImageModel saveImage(ImageModel image){return imageRepository.save(image);}
     @Transactional
     public ImageModel updateImage(ImageModel request, UUID id) throws SQLException {
-        ImageModel image = imageRepository.findById(id).get();
+        if(imageRepository.findById(id).isPresent()){
+            ImageModel image = imageRepository.findById(id).get();
 
-        image.setId(request.getId());
-        image.setImage_data(request.getImage_data());
-        image.setImage_name(request.getImage_name());
-        image.setImage_path(request.getImage_path());
+            image.setImage_data(request.getImage_data());
+            image.setImage_name(request.getImage_name());
+            image.setImage_path(request.getImage_path());
+            return image;
+        }
+        return null;
 
-        return image;
+
+
     }
     @Transactional
     public Boolean deleteImage(UUID id){

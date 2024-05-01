@@ -17,6 +17,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/images")
@@ -31,8 +33,9 @@ public class ImageController {
 
     //Request body lee los datos que le pasamos
     @PostMapping
-    public ImageModel saveImage(@RequestParam("image") MultipartFile image) throws IOException, SQLException {
-        ImageModel imageMdl = new ImageModel(image.getName(),".",image.getBytes());
+    public ImageModel saveImage(@RequestParam("parent_memory") UUID parent_memory, @RequestParam("image") MultipartFile image) throws IOException, SQLException {
+
+        ImageModel imageMdl = new ImageModel(image.getName(),".",image.getBytes(), parent_memory);
 
         return this.imageService.saveImage(imageMdl);
     }
@@ -46,8 +49,10 @@ public class ImageController {
         return null;
     }
     @PutMapping(path = "/{id}")
-    public ImageModel updateImage(@RequestBody ImageModel request,@PathVariable("id") UUID id) throws SQLException {
-        return this.imageService.updateImage(request,id);
+    public ImageModel updateImage(@RequestParam("parent_memory") UUID parent_memory,@RequestParam("image") MultipartFile image,@PathVariable("id") UUID id) throws SQLException, IOException {
+        ImageModel imageMdl = new ImageModel(image.getName(),".",image.getBytes(),parent_memory);
+
+        return this.imageService.updateImage(imageMdl, id);
     }
     @DeleteMapping(path = "/{id}")
     public String deleteImage(@RequestBody ImageModel request,@PathVariable("id") UUID id){
@@ -58,6 +63,13 @@ public class ImageController {
         }else{
             return "Error in delete ("+id+")";
         }
+    }
+
+    //Get images by memoryid
+    @GetMapping("/")
+    @ResponseBody
+    public List<ImageModel> getImagesByMemory(@RequestParam UUID memoryid) {
+        return this.imageService.getImagesByMemory(memoryid);
     }
 
 

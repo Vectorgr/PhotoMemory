@@ -13,19 +13,19 @@ import java.util.UUID;
 @Entity
 @Table(name="images")
 public class ImageModel {
-    public ImageModel(String image_name, String image_path, byte[] image_data) throws SQLException {
+    public ImageModel(String image_name, String image_path, byte[] image_data, UUID parentMemory) throws SQLException {
         this.image_name = image_name;
         this.image_path = image_path;
         this.image_data = new SerialBlob(image_data );
-
+        this.parentMemory = parentMemory;
     }
     public ImageModel(){
 
     }
     @Id
     private UUID id = UUID.randomUUID();
-    @Column
-    private UUID parent_memory;
+    @Column(nullable = false)
+    private UUID parentMemory;
     @Column
     private String image_name;
 
@@ -67,10 +67,10 @@ public class ImageModel {
     }
 
     public UUID getParent_memory() {
-        return parent_memory;
+        return parentMemory;
     }
 
     public void setParent_memory(UUID parent_memory) {
-        this.parent_memory = parent_memory;
+        this.parentMemory = parent_memory;
     }
 }

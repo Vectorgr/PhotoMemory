@@ -38,7 +38,6 @@ public class MemoryService {
         memory.setTitle(request.getTitle());
         memory.setDescription(request.getDescription());
         memory.setDate(request.getDate());
-        memory.setImage(request.getImage());
 
         return memory;
     }
