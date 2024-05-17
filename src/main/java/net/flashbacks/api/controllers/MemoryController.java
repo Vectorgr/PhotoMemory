@@ -12,6 +12,15 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.UUID;
 
+/*
+La peticion será post
+ http://.../{uuid}/
+ {
+  "title": "Feliz dia probando esto",
+  "description": "Esto es la descripcion del pmermeireoroeoreireioroienurenjkn okrmer oi rejiorej  y asi finalizaria.",
+  "date": "10/05/2024"
+}
+ */
 @RestController
 @RequestMapping("/")
 public class MemoryController {

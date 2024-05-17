@@ -13,12 +13,12 @@ import java.util.UUID;
 @Entity
 @Table(name="images")
 public class ImageModel {
-    public ImageModel(String image_name, String image_path, byte[] image_data, UUID parentMemory) throws SQLException {
+    public ImageModel(String image_name, byte[] image_data, UUID parentMemory) throws SQLException {
         this.image_name = image_name;
-        this.image_path = image_path;
         this.image_data = new SerialBlob(image_data );
         this.parentMemory = parentMemory;
     }
+    @Deprecated
     public ImageModel(){
 
     }
@@ -32,16 +32,9 @@ public class ImageModel {
     @Column
     private String image_path;
 
-    @Column
+    @Column(columnDefinition="LONGBLOB")
     private Blob image_data;
 
-    public String getImage_path() {
-        return image_path;
-    }
-
-    public void setImage_path(String image_path) {
-        this.image_path = image_path;
-    }
 
     public String getImage_name() {
         return image_name;

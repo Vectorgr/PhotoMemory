@@ -2,6 +2,7 @@ package net.flashbacks.api.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import java.time.LocalDate;
@@ -14,7 +15,7 @@ public class MemoryModel {
     @Id
     private UUID id = UUID.randomUUID();
 
-    @Column
+    @Column(nullable = false)
     private String title;
 
     @Column
@@ -27,6 +28,8 @@ public class MemoryModel {
     @Column
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate createdDate = LocalDate.now();
+
+    private List<UUID> images;
 
     public UUID getId() {
         return id;
@@ -59,7 +62,13 @@ public class MemoryModel {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+    public List<UUID> getImages(){
 
+        return images;
+    }
+    public void addImageModel(ImageModel imageModel){
+        this.images.add(imageModel.getId());
+    }
     public LocalDate getCreatedDate() {
         return createdDate;
     }
@@ -68,4 +77,7 @@ public class MemoryModel {
         this.createdDate = createdDate;
     }
 
+    public void setImages(List<UUID> images) {
+        this.images = images;
+    }
 }

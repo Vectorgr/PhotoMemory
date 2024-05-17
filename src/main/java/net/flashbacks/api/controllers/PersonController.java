@@ -51,8 +51,7 @@ public class PersonController {
         }
     }
     //Profile picture
-    //TODO return response
-    @PutMapping(path = "/{id}/image")
+    @PostMapping(path = "/{id}/image")
     public PersonModel  saveProfilePic(@RequestParam("image") MultipartFile image, @PathVariable("id") UUID id) throws IOException, SQLException {
         if(this.getPerson(id).isPresent()){
             PersonModel person = getPerson(id).get();

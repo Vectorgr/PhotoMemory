@@ -1,5 +1,6 @@
 package net.flashbacks.api.services;
 
+import net.flashbacks.api.models.ImageModel;
 import net.flashbacks.api.models.MemoryModel;
 import net.flashbacks.api.repositories.IMemoryRespository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,22 @@ public class MemoryService {
 
     @Transactional
 
+    public MemoryModel addImage(ImageModel imageModel, UUID parentId){
+        MemoryModel memory = memoryRespository.findById(parentId).get();
+
+        memory.addImageModel(imageModel);
+
+        return memory;
+    }
+    @Transactional
+
     public MemoryModel updateMemory(MemoryModel request, UUID id){
         MemoryModel memory = memoryRespository.findById(id).get();
 
         memory.setTitle(request.getTitle());
         memory.setDescription(request.getDescription());
         memory.setDate(request.getDate());
+        memory.setImages(request.getImages());
 
         return memory;
     }

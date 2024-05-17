@@ -36,7 +36,6 @@ public class ImageService {
 
             image.setImage_data(request.getImage_data());
             image.setImage_name(request.getImage_name());
-            image.setImage_path(request.getImage_path());
             return image;
         }
         return null;

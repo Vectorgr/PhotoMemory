@@ -35,7 +35,7 @@ public class ImageController {
     @PostMapping
     public ImageModel saveImage(@RequestParam("parent_memory") UUID parent_memory, @RequestParam("image") MultipartFile image) throws IOException, SQLException {
 
-        ImageModel imageMdl = new ImageModel(image.getName(),".",image.getBytes(), parent_memory);
+        ImageModel imageMdl = new ImageModel(image.getName(),image.getBytes(), parent_memory);
 
         return this.imageService.saveImage(imageMdl);
     }
@@ -50,7 +50,7 @@ public class ImageController {
     }
     @PutMapping(path = "/{id}")
     public ImageModel updateImage(@RequestParam("parent_memory") UUID parent_memory,@RequestParam("image") MultipartFile image,@PathVariable("id") UUID id) throws SQLException, IOException {
-        ImageModel imageMdl = new ImageModel(image.getName(),".",image.getBytes(),parent_memory);
+        ImageModel imageMdl = new ImageModel(image.getName(),image.getBytes(),parent_memory);
 
         return this.imageService.updateImage(imageMdl, id);
     }
