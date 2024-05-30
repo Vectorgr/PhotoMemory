@@ -50,11 +50,11 @@ public class MemoryController {
         return this.memoryService.updateMemory(request,id);
     }
     @DeleteMapping(path = "/{id}")
-    public String deleteMemory(@RequestBody MemoryModel request,@PathVariable("id") UUID id){
+    public String deleteMemory(@PathVariable("id") UUID id){
         boolean ok = this.memoryService.deleteMemory(id);
 
         if(ok){
-            return "User deleted ("+id+")";
+            return "Memory deleted ("+id+")";
         }else{
             return "Error in delete ("+id+")";
         }

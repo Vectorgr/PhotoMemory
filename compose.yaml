@@ -1,0 +1,17 @@
+
+services:
+  api:
+    build:
+      context: .
+      args:
+        SERVER_PORT: 8000
+        MARIADB_PORT: 8306
+        MARIADB_IP: 155.133.26.188
+        MARIADB_USERNAME: victor
+        MARIADB_PASSWORD: "Comediante_68#Provincia"
+    ports:
+      - 8000:8000
+      - 8306:8306
+
+
+
