@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ApiApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ApiApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/net.flashbacks.api.html">net.flashbacks.api</a> &gt; ApiApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.052s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">1.052s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>10:46:35.088 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [net.flashbacks.api.ApiApplicationTests]: ApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:46:35.285 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration net.flashbacks.api.ApiApplication for test class net.flashbacks.api.ApiApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2024-05-30T10:46:35.984+02:00  INFO 9940 --- [flashbacks] [    Test worker] net.flashbacks.api.ApiApplicationTests   : Starting ApiApplicationTests using Java 17.0.9 with PID 9940 (started by victor in C:\Users\victor\misGits\api)
+2024-05-30T10:46:35.987+02:00  INFO 9940 --- [flashbacks] [    Test worker] net.flashbacks.api.ApiApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-05-30T10:46:37.626+02:00  INFO 9940 --- [flashbacks] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30T10:46:37.800+02:00  INFO 9940 --- [flashbacks] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 5 JPA repository interfaces.
+2024-05-30T10:46:38.940+02:00  INFO 9940 --- [flashbacks] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30T10:46:39.057+02:00  INFO 9940 --- [flashbacks] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-30T10:46:39.120+02:00  INFO 9940 --- [flashbacks] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-30T10:46:39.646+02:00  INFO 9940 --- [flashbacks] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30T10:46:39.710+02:00  INFO 9940 --- [flashbacks] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-30T10:46:40.320+02:00  INFO 9940 --- [flashbacks] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@100807ca
+2024-05-30T10:46:40.324+02:00  INFO 9940 --- [flashbacks] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-30T10:46:40.452+02:00  WARN 9940 --- [flashbacks] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-30T10:46:42.032+02:00  INFO 9940 --- [flashbacks] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists images
+Hibernate: drop table if exists locations
+Hibernate: drop table if exists memories
+Hibernate: drop table if exists people
+Hibernate: drop table if exists users
+Hibernate: create table images (id binary(16) not null, parent_memory binary(16) not null, image_name varchar(255), image_path varchar(255), image_data LONGBLOB, primary key (id)) engine=InnoDB
+Hibernate: create table locations (created_date date, latitude decimal(10,7), longitude decimal(10,7), id binary(16) not null, description varchar(255), name varchar(255), image LONGBLOB, primary key (id)) engine=InnoDB
+Hibernate: create table memories (created_date date, date date, id binary(16) not null, description varchar(255), title varchar(255) not null, images varbinary(255), primary key (id)) engine=InnoDB
+Hibernate: create table people (birth_date date, created_date date, id binary(16) not null, biography varchar(255), name varchar(255), profile_pic mediumblob, primary key (id)) engine=InnoDB
+Hibernate: create table users (admin bit, id binary(16) not null, hash_pass varchar(255), name varchar(255), primary key (id)) engine=InnoDB
+2024-05-30T10:46:43.037+02:00  INFO 9940 --- [flashbacks] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T10:46:44.491+02:00  WARN 9940 --- [flashbacks] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30T10:46:44.544+02:00  WARN 9940 --- [flashbacks] [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8127ed99-a740-4a8d-b80a-fa5bdc56029e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-05-30T10:46:46.981+02:00  INFO 9940 --- [flashbacks] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@69fa5536, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ee5792a, org.springframework.security.web.context.SecurityContextHolderFilter@23d0f6be, org.springframework.security.web.header.HeaderWriterFilter@4615bc00, org.springframework.web.filter.CorsFilter@37f60cd4, org.springframework.security.web.authentication.logout.LogoutFilter@3a641f6, net.flashbacks.api.security.JWTAuthorizationFilter@6cd65042, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45c10678, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ad57db1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cf46574, org.springframework.security.web.access.ExceptionTranslationFilter@45e49d3d, org.springframework.security.web.access.intercept.AuthorizationFilter@6b23897a]
+2024-05-30T10:46:48.345+02:00  INFO 9940 --- [flashbacks] [    Test worker] net.flashbacks.api.ApiApplicationTests   : Started ApiApplicationTests in 12.731 seconds (process running for 15.011)
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.7</a> at 30 may 2024 10:46:49</p>
+</div>
+</div>
+</body>
+</html>
